@@ -11,13 +11,13 @@
 </svelte:head>
 
 <section>
-  <span class="coronaarch">
+  <div class="coronaarch card">
     <picture>
       <source srcset={coronaarch} type="image/jpg" />
       <img src={coronaarch} alt="Corona Arch with Claret Cup in front" />
     </picture>
     <div class="piclabel">Corona Arch</div>
-  </span>
+  </div>
 
   <h2>
     try editing <strong>src/routes/+page.svelte</strong>
@@ -42,11 +42,17 @@
   }
 
   .coronaarch img {
-    width: 100%;
-    padding: 0;
+    width: 85%;
+    padding: 20px;
   }
 
   .piclabel {
-    margin-top: 5px;
+    color: #d5c6b9;
+    padding: 5px;
+  }
+
+  .card {
+    background-color: #4b2421;
+    border-radius: 6px;
   }
 </style>
