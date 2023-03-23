@@ -18,6 +18,14 @@
     </picture>
     <div class="piclabel">Corona Arch</div>
   </div>
+  <div class="card">
+    <h2>Corona Arch Info</h2>
+    <p>Size:</p>
+    <p>Type:</p>
+    <p>Date of Picture:</p>
+    <p>Trail Description:</p>
+    <p>Size:</p>
+  </div>
 
   <h2>
     try editing <strong>src/routes/+page.svelte</strong>
@@ -38,21 +46,30 @@
   .coronaarch {
     display: inline-block;
     position: relative;
-    width: 25%;
   }
 
   .coronaarch img {
-    width: 85%;
+    display: inline-block;
+    width: 160px;
     padding: 20px;
+    padding-bottom: 0px;
   }
 
   .piclabel {
-    color: #d5c6b9;
-    padding: 5px;
+    padding-left: 20px;
   }
 
   .card {
     background-color: #4b2421;
     border-radius: 6px;
+    width: 200px;
+    height: 270px;
+    color: #d5c6b9;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+  }
+  h2 {
+    font-size: 22px;
   }
 </style>
