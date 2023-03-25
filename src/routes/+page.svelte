@@ -20,11 +20,11 @@
   </div>
   <div class="card">
     <h2>Corona Arch Info</h2>
-    <p>Size:</p>
-    <p>Type:</p>
-    <p>Date of Picture:</p>
-    <p>Trail Description:</p>
-    <p>Size:</p>
+    <p>Size: 110ft x 110ft</p>
+    <p>Type: Buttress</p>
+    <p>Date of Picture: 4/24/22</p>
+    <p>Trail Description: Well-marked, busy trail near Moab, UT.</p>
+    <p>GPS: 38 34.790' -109 37.197'</p>
   </div>
 
   <h2>
@@ -56,7 +56,7 @@
   }
 
   .piclabel {
-    padding-left: 20px;
+    margin: 5px auto;
   }
 
   .card {
@@ -69,7 +69,12 @@
     text-align: center;
     margin: 5px;
   }
+
   h2 {
     font-size: 22px;
+  }
+
+  p {
+    margin: 5px 0px;
   }
 </style>
