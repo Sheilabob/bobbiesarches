@@ -26,6 +26,19 @@
     </picture>
     <div class="piclabel">Angel Arch</div>
   </div>
+  <div class="card angelarch">
+    <h2>Angel Arch Info</h2>
+    <p>Size: 135ft x 120ft</p>
+    <p>Type: Fin</p>
+    <p>Date of Picture: 6/3/20</p>
+    <p>
+      Trail Description: Marked back-country trail (13 miles to nearest
+      trailhead) leads to front, route-finding and scrambling to get up to and
+      behind. Inside Needles District of Canyonlands National Park, Salt Creek.
+      Permit required for overnight stays.
+    </p>
+    <p>GPS: 38 3.106' -109 45.406'</p>
+  </div>
 </div>
 
 <style>
@@ -36,6 +49,10 @@
   .coronaarch {
     display: inline-block;
     position: relative;
+  }
+
+  .angelarch {
+    font-size: 11px;
   }
 
   .coronaarch img {
