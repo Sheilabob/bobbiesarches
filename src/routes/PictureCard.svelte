@@ -109,7 +109,8 @@
     background-color: #4b2421;
     overflow: hidden;
     color: #d5c6b9;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
   }
