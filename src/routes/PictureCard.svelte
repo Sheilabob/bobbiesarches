@@ -2,8 +2,6 @@
   import coronaarch from "$lib/images/corona-arch.jpg";
   import angelarch from "$lib/images/angel-arch.jpeg";
 
-  let flipped = true;
-
   function flip(node, { delay = 0, duration = 1500 }) {
     return {
       delay,
@@ -14,32 +12,42 @@
 			`,
     };
   }
+
+  let arches = [
+    { title: "Corona Arch", flipped: true },
+    { title: "Angel Arch", flipped: true },
+  ];
 </script>
 
 <div class="piccards">
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div class="card-container" on:click={() => (flipped = !flipped)}>
-    <div class="card">
-      {#if flipped}
-        <div class="coronaarch side" transition:flip>
-          <picture>
-            <source srcset={coronaarch} type="image/jpg" />
-            <img src={coronaarch} alt="Corona Arch with Claret Cup in front" />
-          </picture>
-          <div class="piclabel">Corona Arch</div>
-        </div>
-      {:else}
-        <div class="side" transition:flip>
-          <h2>Corona Arch Info</h2>
-          <p>Size: 110ft x 110ft</p>
-          <p>Type: Buttress</p>
-          <p>Date of Picture: 4/24/22</p>
-          <p>Trail Description: Well-marked, busy trail near Moab, UT.</p>
-          <p>GPS: 38 34.790' -109 37.197'</p>
-        </div>
-      {/if}
+  {#each arches as arch}
+    <div class="card-container" on:click={() => (arch.flipped = !arch.flipped)}>
+      <div class="card">
+        {#if arch.flipped}
+          <div class="coronaarch side" transition:flip>
+            <picture>
+              <source srcset={coronaarch} type="image/jpg" />
+              <img
+                src={coronaarch}
+                alt="Corona Arch with Claret Cup in front"
+              />
+            </picture>
+            <div class="piclabel">{arch.title}</div>
+          </div>
+        {:else}
+          <div class="side" transition:flip>
+            <h2>Corona Arch Info</h2>
+            <p>Size: 110ft x 110ft</p>
+            <p>Type: Buttress</p>
+            <p>Date of Picture: 4/24/22</p>
+            <p>Trail Description: Well-marked, busy trail near Moab, UT.</p>
+            <p>GPS: 38 34.790' -109 37.197'</p>
+          </div>
+        {/if}
+      </div>
     </div>
-  </div>
+  {/each}
   <!-- <div class="coronaarch card">
     <picture>
       <source srcset={angelarch} type="image/jpg" />
