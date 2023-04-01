@@ -14,8 +14,29 @@
   }
 
   let arches = [
-    { title: "Corona Arch", flipped: true },
-    { title: "Angel Arch", flipped: true },
+    {
+      title: "Corona Arch",
+      flipped: true,
+      size: "110ft x 110ft",
+      picdate: "4/24/22",
+      type: "Buttress",
+      traildesc: "Well-marked, busy trail near Moab, UT.",
+      gps: "38 34.790' -109 37.197'",
+      srcset: coronaarch,
+      alt: "Corona Arch with Claret Cup in front",
+    },
+    {
+      title: "Angel Arch",
+      flipped: true,
+      size: "135ft x 120ft",
+      picdate: "6/3/20",
+      type: "Fin",
+      traildesc:
+        "Marked back-country trail (13 miles to nearest trailhead) leads to front, route-finding and scrambling to get up to and behind. Inside Needles District of Canyonlands National Park, Salt Creek. Permit required for overnight stays.",
+      gps: "38 3.106' -109 45.406'",
+      srcset: angelarch,
+      alt: "Columbine with Angel Arch in the background",
+    },
   ];
 </script>
 
@@ -27,22 +48,26 @@
         {#if arch.flipped}
           <div class="coronaarch side" transition:flip>
             <picture>
-              <source srcset={coronaarch} type="image/jpg" />
-              <img
-                src={coronaarch}
-                alt="Corona Arch with Claret Cup in front"
-              />
+              <source srcset={arch.srcset} type="image/jpg" />
+              <img src={arch.srcset} alt={arch.alt} />
             </picture>
             <div class="piclabel">{arch.title}</div>
           </div>
         {:else}
-          <div class="side" transition:flip>
-            <h2>Corona Arch Info</h2>
-            <p>Size: 110ft x 110ft</p>
-            <p>Type: Buttress</p>
-            <p>Date of Picture: 4/24/22</p>
-            <p>Trail Description: Well-marked, busy trail near Moab, UT.</p>
-            <p>GPS: 38 34.790' -109 37.197'</p>
+          <div class="coronaarch side back" transition:flip>
+            <picture>
+              <source srcset={arch.srcset} type="image/jpg" />
+              <img
+                src={arch.srcset}
+                alt="Corona Arch with Claret Cup in front"
+              />
+            </picture>
+            <h2>{arch.title}</h2>
+            <p>Size: {arch.size}</p>
+            <p>Type: {arch.type}</p>
+            <p>Date of Picture: {arch.picdate}</p>
+            <p>Trail Description: {arch.traildesc}</p>
+            <p>GPS: {arch.gps}</p>
           </div>
         {/if}
       </div>
@@ -99,6 +124,7 @@
     position: relative;
     width: 200px;
     height: 270px;
+    margin: 10px;
   }
 
   .card {
@@ -122,6 +148,13 @@
     /* justify-content: center; */
     /* align-items: center; */
   }
+
+  .back {
+    height: 225%;
+    width: 225%;
+    z-index: 5;
+  }
+
   h2 {
     font-size: 22px;
   }
